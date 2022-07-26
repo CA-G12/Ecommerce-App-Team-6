@@ -4,7 +4,65 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <section class="cart">
+        <div class="container">
+          <div class="breadcrumb">
+            <ul>
+              <li><i class="fa-solid fa-house"></i><a href="#"></a>Home</li>
+              <li>Shopping Cart</li>
+            </ul>
+          </div>
+          <table class="shopping-cart">
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+            <tr>
+              <td>
+                <div class="product-title">
+                  <span><img src="../assets/images/product.webp"/></span>
+                  <span>Chain bucket bag</span>
+                </div>
+              </td>
+              <td><span class="price">$150.0</span></td>
+              <td>
+                <div class="quantity">
+                  <button class="decrease">-</button>
+                  <span class="quantity-number">20</span>
+                  <button class="decrease">+</button>
+                </div>
+              </td>
+              <td><span class="total">$300.0</span></td>
+              <td>
+                <button class="remove"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            
+          </table>
+          <section class="cart-total">
+            <h3>Cart Total</h3>
+            <div class="total">
+              <span>Total</span>
+              <span class="value">$750</span>
+            </div>
+        </div>
+        </section>
+      </section>
+    </main>
+  </body>
 </html>
