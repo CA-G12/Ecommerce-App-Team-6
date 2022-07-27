@@ -34,16 +34,12 @@ function updateCartProduct(itemsArray, newItem) {
 }
 
 function filterProductByCategory(products, options) {
-  const { title = "", category = "All" } = options;
+  const { name = "", category = "All" } = options;
   let filteredProducts = products;
-  filteredProducts = filteredProducts.filter((item) => item.title.toLowerCase().includes(title.toLowerCase()));
-  filteredProducts = filteredProducts.filter((item) => item.category === category);
+  filteredProducts = filteredProducts.filter((item) => item.name.toLowerCase().includes(name.toLowerCase()));
+  filteredProducts = filteredProducts.filter((item) => (item.category == "All" ? true : item.category === category));
 
   return filteredProducts;
-}
-
-function printHello(name) {
-  return "hello " + name;
 }
 
 if (module != "undefined") {
