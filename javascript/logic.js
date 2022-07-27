@@ -9,6 +9,16 @@ function LocalStorgeObject(pId, pName, pDetails, pPrice, pCategory, pImglink) {
     img: pImglink,
   };
 }
+function updateCartProduct(itemsArray, newItem) {
+  let newArray = [...itemsArray];
+  let certainIndex = itemsArray.findIndex((ele) => ele.id == newItem.id);
+  newArray[certainIndex] = newItem;
+  return newArray;
+}
+function deleteCartProduct(itemsArray, newItem) {
+  return  itemsArray.filter((ele) => ele.id != newItem.id);
+}
+
 
 function getProductById(products, id) {
   return products.find((p) => p.id == id);
@@ -50,6 +60,8 @@ if (typeof module != "undefined") {
     removeCartProduct,
     updateCartProduct,
     LocalStorgeObject,
+    editItem,
+    deleteCartProduct,
     filterProductByCategory,
   };
 }

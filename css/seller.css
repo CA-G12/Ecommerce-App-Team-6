@@ -72,7 +72,7 @@ label {
 #inputsProdect {
   margin-top: 15px;
 }
-.addBtn {
+.addBtn .editBtn{
   height: 30px;
   min-width: 75px;
   max-width: 100px;
@@ -95,6 +95,86 @@ label {
   font-weight: 600;
   border-width: 3px 0 3px 0;
   border-spacing: 0;
+}
+#nav {
+ 
+  box-shadow: 0px 1px 4px 4px #eee;
+}
+
+#nav a {
+  color: #000;
+}
+
+#nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+#nav .logo {
+  color: #000;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+#nav .icons {
+  width: 33rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav .search-bar {
+  border: 1px solid #CCC;
+  vertical-align: middle;
+  border-radius: .5rem;
+}
+
+#nav .search-bar input {
+  width: 14rem;
+  font-size: 1.2rem;
+  padding: .5rem .7rem;
+  border: none;
+  outline: none;
+}
+
+#nav .search-bar i {
+  font-size: 1.3rem;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 0 1rem 0 .5rem;
+}
+
+#nav .links {
+  width: 8rem;
+  display: flex;
+  list-style: none;
+  font-size: 1.3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav .links .shopping {
+  margin-right: .5rem;
+}
+
+#nav .links i {
+  cursor: pointer;
+}
+
+#nav .user {
+  padding: 0.4rem 0.8rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+  background-color: #EEE;
+  cursor: pointer;
+}
+
+#nav .user:hover {
+  background-color: #CCC;
 }
 
 .shopping-cart td {
@@ -155,4 +235,7 @@ img {
   width: 10rem;
   height: 10rem;
   border-radius: 5%;
+}
+.editBtn{
+  display: none;
 }
