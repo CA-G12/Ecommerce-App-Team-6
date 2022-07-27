@@ -1,5 +1,3 @@
-let logicFun = require("../javascript/logic.js");
-
 describe("The function updateCartProduct should return", () => {
   test("Should return the updated object", () => {
     const actual = logicFun.updateCartProduct(

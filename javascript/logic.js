@@ -42,7 +42,7 @@ function filterProductByCategory(products, options) {
   return filteredProducts;
 }
 
-if (module != "undefined") {
+if (typeof module != "undefined") {
   module.exports = {
     getProductById,
     getTotalPrice,
@@ -51,6 +51,5 @@ if (module != "undefined") {
     updateCartProduct,
     LocalStorgeObject,
     filterProductByCategory,
-    printHello,
   };
 }
