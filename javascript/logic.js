@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Pure functions
 
 function getProductById(products, id) {
@@ -56,5 +57,21 @@ if (module != "undefined") {
     updateCartProduct,
     filterProductByCategory,
     printHello,
+=======
+function LocalStorgeObject(pId, pName, pDetails, pPrice, pCategory, pImglink) {
+  return {
+    id: pId,
+    name: pName,
+    details: pDetails,
+    price: pPrice,
+    category: pCategory,
+    img: pImglink,
+  };
+}
+
+if (typeof module !== "undefined") {
+  module.exports = {
+    LocalStorgeObject,
+>>>>>>> 382c561a89934e4f2770c681dab2fa90b26d61f8
   };
 }

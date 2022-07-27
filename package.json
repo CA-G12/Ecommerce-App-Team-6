@@ -7,7 +7,12 @@
     "test": "test"
   },
   "scripts": {
+<<<<<<< HEAD
     "test": "jest --watch"
+=======
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+>>>>>>> 382c561a89934e4f2770c681dab2fa90b26d61f8
   },
   "repository": {
     "type": "git",
