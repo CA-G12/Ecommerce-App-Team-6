@@ -9,7 +9,7 @@ const priceInput = document.getElementById("priceInput");
 const imgInput = document.getElementById("imgInput");
 const shoppingCart = document.getElementsByClassName("shopping-cart")[0];
 
-let allProdects = [];
+let allProdects =  JSON.parse(localStorage.getItem("Products") || '[]')
 let idNext = 0;
 let category, price, namePro, imglink, detail;
 
@@ -26,28 +26,27 @@ addBtn.addEventListener("click", () => {
 });
 
 function addtoLocalStorge() {
-  if (localStorage.getItem("Products") != null) {
-    allProdects = JSON.parse(localStorage.getItem("Products"));
-    idNext = allProdects[allProdects.length - 1].id + 1;
-  }
+  const lastId = allProdects[allProdects.length - 1] && allProdects[allProdects.length - 1].id
+  idNext = (lastId || 0) + 1;
   category = categorySelection.options[categorySelection.selectedIndex].value;
-  allProdects.push(
-    LocalStorgeObject(
-      idNext,
-      nameInput.value,
-      detailsInput.value,
-      priceInput.value,
-      category,
-      imgInput.value
-    )
-  );
-  localStorage.setItem("Products", JSON.stringify(allProdects));
+
+  const newProductsList = addNewProduct(allProdects, {
+    id: idNext,
+    name: nameInput.value,
+    details: detailsInput.value,
+    price: priceInput.value,
+    category: category,
+    img: imgInput.value,
+  });
+
+  localStorage.setItem("Products", JSON.stringify(newProductsList));
+
   window.location.reload();
 }
 
 diplayLocalItem();
 function diplayLocalItem() {
-  JSON.parse(localStorage.getItem("Products")).forEach((element) => {
+ allProdects.forEach((element) => {
     let row = document.createElement("tr");
 
     let idHidden = document.createElement("input");
@@ -58,10 +57,7 @@ function diplayLocalItem() {
     imgtd.setAttribute("class", "imgTd");
 
     let img = document.createElement("img");
-    img.setAttribute(
-      "src",
-    element.img
-    );
+    img.setAttribute("src", element.img);
     imgtd.appendChild(img);
 
     let nametd = document.createElement("td");
