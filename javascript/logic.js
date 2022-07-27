@@ -1,5 +1,14 @@
-<<<<<<< HEAD
 // Pure functions
+function LocalStorgeObject(pId, pName, pDetails, pPrice, pCategory, pImglink) {
+  return {
+    id: pId,
+    name: pName,
+    details: pDetails,
+    price: pPrice,
+    category: pCategory,
+    img: pImglink,
+  };
+}
 
 function getProductById(products, id) {
   return products.find((p) => p.id == id);
@@ -24,17 +33,6 @@ function updateCartProduct(itemsArray, newItem) {
   return newArray;
 }
 
-// function filterProductByCategory(products, title, category, priceOrder) {
-//   let result = products.filter((product) =>
-//     cateogry == "All" ? true : product.category == category && product.title.includes(title)
-//   );
-//   if (priceOrder == "ascending") {
-//     return result.sort((a, b) => a.price - b.price);
-//   } else if (priceOrder == "descending") {
-//     return result.sort((a, b) => b.price - a.price);
-//   }
-// }
-
 function filterProductByCategory(products, options) {
   const { title = "", category = "All" } = options;
   let filteredProducts = products;
@@ -55,23 +53,8 @@ if (module != "undefined") {
     addCartProduct,
     removeCartProduct,
     updateCartProduct,
+    LocalStorgeObject,
     filterProductByCategory,
     printHello,
-=======
-function LocalStorgeObject(pId, pName, pDetails, pPrice, pCategory, pImglink) {
-  return {
-    id: pId,
-    name: pName,
-    details: pDetails,
-    price: pPrice,
-    category: pCategory,
-    img: pImglink,
-  };
-}
-
-if (typeof module !== "undefined") {
-  module.exports = {
-    LocalStorgeObject,
->>>>>>> 382c561a89934e4f2770c681dab2fa90b26d61f8
   };
 }
