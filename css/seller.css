@@ -32,7 +32,7 @@ html {
   background-color: white;
   max-width: 70%;
   min-width: 40%;
-  height: 85%;
+  height: 90%;
   padding: 1.5rem 3rem;
   border-radius: 1%;
   overflow: auto;
@@ -48,8 +48,12 @@ html {
   padding: 2%;
   border: 0.1rem solid #80808073;
 }
-#popupAdditem textarea {
+#popupAdditem textarea   {
   height: 4.5rem;
+  
+}
+#popupAdditem #categorySelection{
+  height: 3.5rem
 }
 #openPop {
   border: none;
