@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/seller.css" />
+    <title>Ecommerce</title>
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <div class="popDiv">
+          <section id="popupAdditem">
+            <div class="popheader">
+              <h1>Add Prodect</h1>
+              <button class="closepop">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <div id="inputsProdect">
+              <label for="nameInput"> Prodect name </label>
+              <input type="text" id="nameInput" placeholder=" Prodect name" />
+
+              <label for="detailsInput"> Details </label>
+              <textarea id="detailsInput" placeholder="Details"></textarea>
+
+              <label for="priceInput"> Price </label>
+
+              <input type="number" id="priceInput" placeholder="Price" />
+
+              <br />
+              <label for="imgInput"> image Link </label>
+              <input type="text" id="imgInput" placeholder="upload image" />
+
+              <br />
+              <label for="categorySelection"> category </label>
+
+              <select id="categorySelection">
+                <option value="T-shirt">T-shirt</option>
+                <option value="watches">watches</option>
+                <option value="shose">shose</option>
+              </select>
+              <button class="addBtn">Add</button>
+            </div>
+          </section>
+        </div>
+
+        <table class="shopping-cart">
+          <tr>
+            <th>Prodect</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>category</th>
+            <th>
+              <button id="openPop">
+                <i class="fa-solid fa-plus"></i> Add item
+              </button>
+            </th>
+          </tr>
+          <tr>
+            <td class="imgTd">
+              <img
+                src="https://images.unsplash.com/photo-1604537529428-15bcbeecfe4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80"
+                class="imgProd"
+              />
+            </td>
+            <td class="nameTd"><p class="nameProd">ddd</p></td>
+            <td class="priceTd"><p class="total">$10</p></td>
+            <td class="categorytd"><p class="categoryProd">dddsssss</p></td>
+            <td>
+              <button class="icons" id="editIcon">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="icons" id="deleteIcon">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </section>
+    </main>
+  </body>
+  <script src="/javascript/seller.js"></script>
+  <script src="/javascript/logic.js"></script>
+</html>
