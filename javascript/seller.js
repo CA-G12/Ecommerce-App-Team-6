@@ -10,7 +10,7 @@ const imgInput = document.getElementById("imgInput");
 const shoppingCart = document.getElementsByClassName("shopping-cart")[0];
 
 let allProdects = [];
-let id = 0;
+let idNext = 0;
 let category, price, namePro, imglink, detail;
 
 ////// eventListener for Buttons
@@ -28,12 +28,12 @@ addBtn.addEventListener("click", () => {
 function addtoLocalStorge() {
   if (localStorage.getItem("Products") != null) {
     allProdects = JSON.parse(localStorage.getItem("Products"));
-    id = allProdects[allProdects.length - 1].id + 1;
+    idNext = allProdects[allProdects.length - 1].id + 1;
   }
   category = categorySelection.options[categorySelection.selectedIndex].value;
   allProdects.push(
     LocalStorgeObject(
-      id,
+      idNext,
       nameInput.value,
       detailsInput.value,
       priceInput.value,
@@ -52,7 +52,7 @@ function diplayLocalItem() {
 
     let idHidden = document.createElement("input");
     idHidden.setAttribute("type", "hidden");
-    idHidden.textContent = element.id;
+    idHidden.textContent = element.idNext;
 
     let imgtd = document.createElement("td");
     imgtd.setAttribute("class", "imgTd");
