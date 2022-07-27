@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+}
+
+:root {
+  --color-red: #ca1515;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin: auto;
+  max-width: 1200px;
+}
+
+ul {
+  list-style: none;
+}
+
+.cart {
+  padding: 3rem 2rem;
+}
+
+.breadcrumb ul {
+  display: flex;
+}
+
+.breadcrumb ul li {
+  font-weight: 600;
+}
+
+.breadcrumb ul li i {
+  margin: 0 0.5rem;
+}
+
+.breadcrumb ul li:last-child {
+  color: #888888;
+}
+
+.breadcrumb ul li:not(:last-child):after {
+  content: "/";
+  margin: 0 0.8rem;
+}
+
+.shopping-cart {
+  width: 100%;
+  font-weight: 600;
+  border-width: 3px 0 3px 0;
+  border-spacing: 0;
+}
+
+.shopping-cart td {
+  border-top: 1px solid #cccc;
+}
+
+.shopping-cart th {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+.shopping-cart th,
+.shopping-cart td {
+  padding: 3rem;
+}
+.shopping-cart td:first-of-type {
+  width: 50%;
+}
+.shopping-cart td .product-title {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.shopping-cart td .product-title img {
+  width: 10rem;
+}
+
+.shopping-cart td .price,
+.shopping-cart td .total {
+  color: var(--color-red);
+}
+
+.shopping-cart button {
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.shopping-cart button.decrease,
+.shopping-cart button.increase {
+  background-color: transparent;
+  border: 1px solid #ccc;
+}
+
+.shopping-cart .quantity-number {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+.shopping-cart .remove {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.6rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-total {
+  width: 30%;
+  margin-left: auto;
+  padding: 2rem;
+  background-color: #eee;
+}
+
+.cart-total h3 {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.cart-total .total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.cart-total .total .value {
+  color: var(--color-red);
+}

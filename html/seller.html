@@ -4,12 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -17,7 +15,24 @@
     <link rel="stylesheet" href="/css/seller.css" />
     <title>Ecommerce</title>
   </head>
+  
   <body>
+      
+  <header id="nav">
+    <div class="container">
+      <a href="./index.html" class="logo">Ashion</a>
+      <div class="icons">
+        <section class="search-bar">
+          <input type="search" name="search" id="search" placeholder="Search a product...">
+          <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        </section>
+        <section class="links">
+          <a href="#" class="shopping"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a class="user"><i class="fa-solid fa-user"></i> User</a>
+        </section>
+      </div>
+    </div>
+  </header>
     <main>
       <section class="container">
         <div class="popDiv">
@@ -52,6 +67,7 @@
                 <option value="shose">shose</option>
               </select>
               <button class="addBtn">Add</button>
+              <button class="editBtn">edit</button>
             </div>
           </section>
         </div>
@@ -63,9 +79,7 @@
             <th>Price</th>
             <th>category</th>
             <th>
-              <button id="openPop">
-                <i class="fa-solid fa-plus"></i> Add item
-              </button>
+              <button id="openPop"><i class="fa-solid fa-plus"></i> Add item</button>
             </th>
           </tr>
           <tr></tr>
