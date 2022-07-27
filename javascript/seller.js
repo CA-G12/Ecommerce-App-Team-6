@@ -34,14 +34,7 @@ function addtoLocalStorge() {
   }
   category = categorySelection.options[categorySelection.selectedIndex].value;
   allProdects.push(
-    LocalStorgeObject(
-      idNext,
-      nameInput.value,
-      detailsInput.value,
-      priceInput.value,
-      category,
-      imgInput.value
-    )
+    LocalStorgeObject(idNext, nameInput.value, detailsInput.value, priceInput.value, category, imgInput.value)
   );
   localStorage.setItem("Products", JSON.stringify(allProdects));
   window.location.reload();
