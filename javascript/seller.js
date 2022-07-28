@@ -105,23 +105,26 @@ function editCertainItem(ele) {
   let localItems = [...JSON.parse(localStorage.getItem("Products"))];
   let item = localItems.findIndex((ele) => element == ele.id);
 
+console.log(localItems[item])
+
   popDiv.style.display = "block";
   nameInput.value = localItems[item].name;
   detailsInput.value = localItems[item].details;
   priceInput.value = localItems[item].price;
   imgInput.value = localItems[item].img;
   for (let index = 0; index < categorySelection.options.length; index++) {
-    if (categorySelection.options[index].value === localItems[item].category) {
-      categorySelection[index].selected = "selected";
+    if (categorySelection.options[item].value === localItems[item].category) {
+      categorySelection[item].selected = "selected";
     }
   }
+  
 
   editBtn.style.display = "block";
   addBtn.style.display = "none";
 
   editBtn.addEventListener("click", () => {
     localItems[item] = {
-      id: 0,
+      id: localItems[item].id,
       name: nameInput.value,
       details: detailsInput.value,
       price: priceInput.value,
@@ -132,11 +135,7 @@ function editCertainItem(ele) {
 
     popDiv.style.display = "none";
     localStorage.setItem(
-      "Products",
-      JSON.stringify(
-        updateCartProduct(
-          JSON.parse(localStorage.getItem("Products")),
-          localItems[item]
+      "Products", JSON.stringify( updateCartProduct( JSON.parse(localStorage.getItem("Products")), localItems[item]
         )
       )
     );
@@ -155,5 +154,7 @@ function deleteItem(ele) {
   );
   if (JSON.parse(localStorage.getItem("Products")).length == 0) {
     localStorage.removeItem("Products");
+   
   }
+ location.reload()
 }

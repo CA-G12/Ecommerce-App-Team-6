@@ -72,7 +72,7 @@ label {
 #inputsProdect {
   margin-top: 15px;
 }
-.addBtn .editBtn{
+.addBtn , .editBtn{
   height: 30px;
   min-width: 75px;
   max-width: 100px;

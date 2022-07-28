@@ -3,16 +3,11 @@ const getProducts =  function() {
   return productsMain(productsListFromStorge);
 }
 
-let cartProducts = localStorage.getItem('cartProducts') || [];
+let cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
 const productBox = document.querySelector('.products');
 
-// function setProduct() {
-
-// }
-
-
 function productsMain(items) {
-  console.log('hi')
+
   items.forEach(item => {
 
     let section = document.createElement('section');
@@ -40,9 +35,11 @@ function productsMain(items) {
     damnIcon.append(shopIcon)
     let arrowIcon = document.createElement('i');
     arrowIcon.classList.add('fa-solid', 'fa-arrow-right', 'arrow')
-    // --------------------------------------------------------------------------
+
     shopIcon.addEventListener('click', e => {
-      console.log('asdasdsa')
+      // console.log(item)
+      cartProducts.push(item);
+      localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
     })
     damnIcon.append(arrowIcon)
   
