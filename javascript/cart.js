@@ -1,40 +1,31 @@
 let shoppingCartProducts = [
   {
     id: 1,
-    title: "Chain bucket bag",
+    name: "Chain bucket bag",
     price: 150,
     quantity: 2,
-    desc: "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt",
-    image_url:
+    details: "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt",
+    img:
       "https://preview.colorlib.com/theme/ashion/img/product/details/xproduct-1.jpg.pagespeed.ic.oXLsKanRhj.webp",
   },
   {
-    id: 2,
-    title: "Chain bucket bag",
+    id: 1,
+    name: "Chain bucket bag",
     price: 150,
     quantity: 2,
-    desc: "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt",
-    image_url:
+    details: "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt",
+    img:
       "https://preview.colorlib.com/theme/ashion/img/product/details/xproduct-1.jpg.pagespeed.ic.oXLsKanRhj.webp",
-  },
-  {
-    id: 3,
-    title: "Chain bucket bag",
-    price: 150,
-    quantity: 2,
-    desc: "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt",
-    image_url:
-      "https://preview.colorlib.com/theme/ashion/img/product/details/xproduct-1.jpg.pagespeed.ic.oXLsKanRhj.webp",
-  },
+  }
 ];
-
-if (getCartProductsFromStorage().length) {
-  shoppingCartProducts = getCartProductsFromStorage();
-}
 
 let productTable = document.querySelector(".shopping-cart tbody");
 let productTRs = Array.from(productTable.querySelectorAll("tr")).slice(1);
 let totalSpan = document.querySelector(".cart-total .total .value");
+
+if (getCartProductsFromStorage().length) {
+  shoppingCartProducts = getCartProductsFromStorage();
+}
 
 // window.onload = () => {
 shoppingCartProducts.forEach((product) => addCartProductHTML(productTable, product));
@@ -87,9 +78,9 @@ function addCartProductHTML(table, product) {
       <td>
         <div class="product-title">
           <span>
-            <img src="${product.image_url}" />
+            <img src="${product.img}" />
           </span>
-          <span class="text">${product.title}</span>
+          <span class="text">${product.name}</span>
         </div>
       </td>
       <td>
@@ -98,12 +89,12 @@ function addCartProductHTML(table, product) {
       <td>
         <div class="quantity">
           <button class="decrease">-</button>
-          <span class="quantity-value">${product.quantity}</span>
+          <span class="quantity-value">${product.quantity||0}</span>
           <button class="increase">+</button>
         </div>
       </td>
       <td>
-        <span class="total">$ ${product.price * product.quantity}</span>
+        <span class="total">$ ${parseInt(product.price) * product.quantity||0}</span>
       </td>
       <td>
         <button class="remove">
@@ -140,7 +131,7 @@ function updateCartProduct(itemsArray, itemID, newItem) {
 
 function filterProductByCategory(products, title, category, priceOrder) {
   let result = products.filter((product) =>
-    cateogry == "All" ? true : product.category == category && product.title.includes(title)
+    cateogry == "All" ? true : product.category == category && product.name.includes(title)
   );
   if (priceOrder == "ascending") {
     return result.sort((a, b) => a.price - b.price);
@@ -158,4 +149,5 @@ function getCartProductsFromStorage() {
   if (localStorage.getItem("cartProducts")) {
     return JSON.parse(localStorage.getItem("cartProducts"));
   }
+ return []
 }
